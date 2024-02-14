@@ -1,7 +1,7 @@
 import { mak } from "@mak-stack/mak-ui"
 import React from "react"
 
-const BackDrop = ({
+export const BackDrop = ({
   children,
   onClose,
   className,
@@ -44,5 +44,3 @@ const BackDrop = ({
     </mak.div>
   )
 }
-
-export default BackDrop

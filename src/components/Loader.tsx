@@ -1,9 +1,9 @@
 import ComponentWrapper from "../functions/componentWrapper"
 import { BiCheckCircle, BiErrorCircle, BiLoaderCircle } from "react-icons/bi"
-import { mak, TypeProps } from "@mak-stack/mak-ui"
+import { mak } from "@mak-stack/mak-ui"
 import React, { useEffect, useState } from "react"
 import { AnimatePresence } from "framer-motion"
-import BackDrop from "./BackDrop"
+import { BackDrop } from "./BackDrop"
 import { LoaderProps } from "@/types"
 
 const iconVariants = {
@@ -141,4 +141,4 @@ const Loader = (props: LoaderProps) => {
   )
 }
 
-export default Loader
+export { Loader }

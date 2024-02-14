@@ -9,46 +9,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { BiChevronUp } from "react-icons/bi"
 import { mak, isObject, TypeProps } from "@mak-stack/mak-ui"
 import ComponentWrapper from "../functions/componentWrapper"
-
-type Position = {
-  top?: number
-  left?: number
-  right?: string | number
-  bottom?: string | number
-}
-type MenuPositions =
-  | "bottom-right"
-  | "bottom-left"
-  | "top-right"
-  | "top-left"
-  | "bottom-center"
-  | "top-center"
-  | "bottom-align-right"
-  | "bottom-align-left"
-  | "top-align-right"
-  | "top-align-left"
-
-interface DropdownElementTriggerProps {
-  icon?: React.ReactNode
-  label?: string | React.ReactNode
-  labelLeft?: boolean
-  labelRight?: boolean
-  options?:
-    | Array<string | number>
-    | Array<{
-        label: string
-        value: any
-        onClick?: (props: any) => void
-      }>
-  selectedOption?: string | number | { label: string; value: string }
-  onChange?: (value: { label: string; value: string } | string | number) => void
-  menuPosition?: MenuPositions
-  chevronLeft?: boolean
-  chevronRight?: boolean
-  dismissOnClick?: boolean
-}
-
-export type OptionObject = { label: string; value: string }
+import { DropdownElementTriggerProps, MenuPositions, Position } from "@/types"
 
 const menuVariants = {
   hidden: {
@@ -538,5 +499,4 @@ const Dropdown = (props: DropdownProps) => {
     </ComponentWrapper>
   )
 }
-export { DropdownMenu }
-export default Dropdown
+export { DropdownMenu, Dropdown }

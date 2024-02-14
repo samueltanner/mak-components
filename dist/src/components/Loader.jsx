@@ -1,0 +1,99 @@
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+import ComponentWrapper from "../functions/componentWrapper";
+import { BiCheckCircle, BiErrorCircle, BiLoaderCircle } from "react-icons/bi";
+import { mak } from "@mak-stack/mak-ui";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { BackDrop } from "./BackDrop";
+const iconVariants = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+    },
+    exit: {
+        opacity: 0,
+    },
+};
+export const LoaderComponent = (_a) => {
+    var { children, loading, error, success, loadingIcon = <BiLoaderCircle className="animate-spin size-4"/>, errorIcon = <BiErrorCircle className="size-4"/>, successIcon = <BiCheckCircle className="size-4"/>, className, makClassName, persistState = false, showIcon = true, loadingState, size = "inline", backdropClassName, backdropMakClassName, onClose } = _a, computedProps = __rest(_a, ["children", "loading", "error", "success", "loadingIcon", "errorIcon", "successIcon", "className", "makClassName", "persistState", "showIcon", "loadingState", "size", "backdropClassName", "backdropMakClassName", "onClose"]);
+    const [state, setState] = useState(undefined);
+    useEffect(() => {
+        if (loadingState) {
+            setState(loadingState);
+        }
+        else {
+            if (loading) {
+                setState("loading");
+            }
+            if (error) {
+                setState("error");
+            }
+            if (success) {
+                setState("success");
+            }
+        }
+    }, [loadingState, loading, error, success]);
+    useEffect(() => {
+        if (state === "loading" || persistState)
+            return;
+        const timeoutId = setTimeout(() => {
+            setState(undefined);
+        }, 4000);
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [state]);
+    const iconMap = {
+        loading: loadingIcon,
+        error: errorIcon,
+        success: successIcon,
+    };
+    const Icon = (<AnimatePresence mode="wait">
+      {state && state !== "default" && (<mak.span key={`${state}`} className="flex" motion={{
+                variants: iconVariants,
+                initial: "hidden",
+                animate: "visible",
+                exit: "exit",
+                transition: { duration: 0.5, delay: 0.5 },
+            }}>
+          {state === "loading" && loadingIcon}
+          {state === "error" && errorIcon}
+          {state === "success" && successIcon}
+        </mak.span>)}
+    </AnimatePresence>);
+    if (size === "screen") {
+        return (<BackDrop className={`${backdropClassName ||
+                "items-center justify-center backdrop-blur-sm gap-2 *:flex *:gap-2 *:items-center *:justify-center"} h-screen w-screen absolute top-0 left-0 flex`} makClassName={backdropMakClassName || "bg-dark-900/50"} onClose={onClose}>
+        <mak.span className={className} makClassName={makClassName}>
+          {children && children}
+          {showIcon && Icon}
+        </mak.span>
+      </BackDrop>);
+    }
+    return (<>
+      <mak.span className={`${className}`} makClassName={makClassName}>
+        {children && children}
+        {showIcon && Icon}
+      </mak.span>
+    </>);
+};
+const Loader = (props) => {
+    return (<ComponentWrapper {...props}>
+      {(computedProps) => (<LoaderComponent {...computedProps} makClassName={props.makClassName} className={props.className}>
+          {props.children}
+        </LoaderComponent>)}
+    </ComponentWrapper>);
+};
+export { Loader };

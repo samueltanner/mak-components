@@ -1,7 +1,7 @@
 import React, { useContext, createContext, useEffect, useRef } from "react"
 import { AnimatePresence } from "framer-motion"
 import { mak } from "@mak-stack/mak-ui"
-import BackDrop from "./BackDrop"
+import { BackDrop } from "./BackDrop"
 
 const ModalContext = createContext<{
   onClose?: () => void
@@ -72,7 +72,7 @@ export const ModalFooter = ({
   )
 }
 
-const Modal = ({
+export const Modal = ({
   children,
   isOpen,
   onClose,
@@ -220,5 +220,3 @@ const Modal = ({
     </ModalContext.Provider>
   )
 }
-
-export default Modal

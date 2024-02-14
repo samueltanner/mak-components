@@ -2,12 +2,19 @@ import typescript from "@rollup/plugin-typescript"
 import babel from "@rollup/plugin-babel"
 
 export default {
-  input: "lib/index.ts",
-  output: {
-    dir: "dist",
-    format: "cjs",
-    sourcemap: true,
-  },
+  input: "src/index.ts",
+  output: [
+    {
+      file: "dist/bundle.cjs.js",
+      format: "cjs",
+      sourcemap: true,
+    },
+    {
+      file: "dist/bundle.esm.js",
+      format: "esm",
+      sourcemap: true,
+    },
+  ],
   plugins: [
     typescript(),
     babel({
@@ -16,5 +23,12 @@ export default {
       presets: ["@babel/preset-react"],
     }),
   ],
-  external: ["react", "react-dom", "tailwindcss", "@mak-stack/mak-ui", "react-icons", "framer-motion"],
+  external: [
+    "react",
+    "react-dom",
+    "tailwindcss",
+    "@mak-stack/mak-ui",
+    "react-icons",
+    "framer-motion",
+  ],
 }

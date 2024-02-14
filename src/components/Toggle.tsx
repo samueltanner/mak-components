@@ -5,25 +5,7 @@ import {
   TypeProps,
   ComponentWrapperResponse,
 } from "@mak-stack/mak-ui"
-import styled from "@emotion/styled"
-
-const StyledSpan = styled.span({
-  height: "8rem",
-  width: "fit-content",
-  backgroundColor: "red",
-
-  'input[type="checkbox"].peer:checked ~ &': {
-    backgroundColor: "blue",
-
-    "*": {
-      backgroundColor: "purple",
-    },
-
-    'input[type="checkbox"].peer:checked ~ & *': {
-      backgroundColor: "yellow",
-    },
-  },
-})
+import React from "react"
 
 type ToggleProps = TypeProps & {
   checked?: boolean
@@ -98,12 +80,10 @@ const ToggleComponent = ({
   )
 }
 
-const Toggle = (props: ToggleProps & TypeProps) => {
+export const Toggle = (props: ToggleProps & TypeProps) => {
   return (
     <ComponentWrapper {...props}>
       {(computedProps) => <ToggleComponent {...computedProps} />}
     </ComponentWrapper>
   )
 }
-
-export default Toggle

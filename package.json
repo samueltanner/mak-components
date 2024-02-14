@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "MakComponents: A collection of React components optimized for use with the MakStack.",
   "main": "index.ts",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c && tsc"

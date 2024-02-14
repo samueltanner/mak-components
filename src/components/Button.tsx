@@ -1,16 +1,6 @@
+import { ButtonProps } from "@/types"
 import ComponentWrapper from "../functions/componentWrapper"
-import { mak, ComponentWrapperResponse, TypeProps } from "@mak-stack/mak-ui"
-import React from "react"
-
-type ButtonProps = TypeProps & {
-  children?: React.ReactNode
-  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void
-  disabled?: boolean
-  type?: "button" | "submit" | "reset"
-  form?: string
-  className?: string
-  makClassName?: string
-}
+import { mak, ComponentWrapperResponse } from "@mak-stack/mak-ui";
 
 const ButtonComponent = ({
   children,
@@ -45,7 +35,7 @@ const ButtonComponent = ({
   )
 }
 
-const Button = (props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
   return (
     <ComponentWrapper {...props} type="button">
       {(computedProps) => {
@@ -62,4 +52,3 @@ const Button = (props: ButtonProps) => {
     </ComponentWrapper>
   )
 }
-export default Button
