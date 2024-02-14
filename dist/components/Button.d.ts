@@ -1,3 +1,3 @@
-/// <reference types="react" />
 import { ButtonProps } from "@/types";
-export declare const Button: (props: ButtonProps) => import("react").JSX.Element;
+import React from "react";
+export declare const Button: (props: ButtonProps) => React.JSX.Element;

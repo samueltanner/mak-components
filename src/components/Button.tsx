@@ -1,6 +1,7 @@
 import { ButtonProps } from "@/types"
-import ComponentWrapper from "../functions/componentWrapper"
-import { mak, ComponentWrapperResponse } from "@mak-stack/mak-ui";
+import { ComponentWrapper } from "./ComponentWrapper"
+import { mak, ComponentWrapperResponse } from "@mak-stack/mak-ui"
+import React from "react"
 
 const ButtonComponent = ({
   children,

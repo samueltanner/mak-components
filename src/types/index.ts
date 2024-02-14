@@ -82,3 +82,16 @@ export type DropdownElementTriggerProps = {
 }
 
 export type OptionObject = { label: string; value: string }
+
+export type ToggleProps = TypeProps & {
+  checked?: boolean
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void
+  disabled?: boolean
+  toggleColor?: string
+  toggleCheckedColor?: string
+  bgColor?: string
+  bgCheckedColor?: string
+  toggleBorderPx?: number
+  toggleBorder?: string
+  toggleHoverColor?: string
+}

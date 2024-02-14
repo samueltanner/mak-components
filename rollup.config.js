@@ -28,7 +28,7 @@ export default {
     "react-dom",
     "tailwindcss",
     "@mak-stack/mak-ui",
-    "react-icons",
+    "react-icons/bi",
     "framer-motion",
   ],
 }

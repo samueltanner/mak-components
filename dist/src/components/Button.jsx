@@ -9,8 +9,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import ComponentWrapper from "../functions/componentWrapper";
+import { ComponentWrapper } from "./ComponentWrapper";
 import { mak } from "@mak-stack/mak-ui";
+import React from "react";
 const ButtonComponent = (_a) => {
     var { children, disabled, onClick, className, makClassName, _className, _makClassName } = _a, computedProps = __rest(_a, ["children", "disabled", "onClick", "className", "makClassName", "_className", "_makClassName"]);
     let { borderVariant, borderPx, hasBorderProps } = computedProps;

@@ -8,7 +8,7 @@ import React, {
 import { AnimatePresence, motion } from "framer-motion"
 import { BiChevronUp } from "react-icons/bi"
 import { mak, isObject, TypeProps } from "@mak-stack/mak-ui"
-import ComponentWrapper from "../functions/componentWrapper"
+import { ComponentWrapper } from "./ComponentWrapper"
 import { DropdownElementTriggerProps, MenuPositions, Position } from "@/types"
 
 const menuVariants = {

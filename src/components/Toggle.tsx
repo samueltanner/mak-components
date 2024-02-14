@@ -1,4 +1,4 @@
-import ComponentWrapper from "../functions/componentWrapper"
+import { ComponentWrapper } from "./ComponentWrapper"
 import {
   mak,
   ensureUtilityClass,
@@ -6,19 +6,7 @@ import {
   ComponentWrapperResponse,
 } from "@mak-stack/mak-ui"
 import React from "react"
-
-type ToggleProps = TypeProps & {
-  checked?: boolean
-  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void
-  disabled?: boolean
-  toggleColor?: string
-  toggleCheckedColor?: string
-  bgColor?: string
-  bgCheckedColor?: string
-  toggleBorderPx?: number
-  toggleBorder?: string
-  toggleHoverColor?: string
-}
+import { ToggleProps } from "../types/index"
 
 const ToggleComponent = ({
   checked: checkedProp,

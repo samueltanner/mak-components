@@ -1,6 +1,6 @@
 {
   "name": "@mak-stack/mak-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MakComponents: A collection of React components optimized for use with the MakStack.",
   "main": "index.ts",
   "module": "dist/bundle.esm.js",

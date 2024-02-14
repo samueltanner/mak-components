@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useRef, useState, } from "
 import { AnimatePresence, motion } from "framer-motion";
 import { BiChevronUp } from "react-icons/bi";
 import { mak, isObject } from "@mak-stack/mak-ui";
-import ComponentWrapper from "../functions/componentWrapper";
+import { ComponentWrapper } from "./ComponentWrapper";
 const menuVariants = {
     hidden: {
         opacity: 0,

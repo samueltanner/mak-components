@@ -1,11 +1,8 @@
-import {
-  useMakUi,
-  componentWrapperLogic,
-} from "@mak-stack/mak-ui"
+import { useMakUi, componentWrapperLogic } from "@mak-stack/mak-ui"
 import { ComponentWrapperProps } from "../types"
 import React from "react"
 
-const ComponentWrapper = ({
+export const ComponentWrapper = ({
   children,
   type,
   ...props
@@ -28,5 +25,3 @@ const ComponentWrapper = ({
     </>
   )
 }
-
-export default ComponentWrapper

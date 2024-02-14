@@ -1,4 +1,4 @@
-import ComponentWrapper from "../functions/componentWrapper"
+import { ComponentWrapper } from "./ComponentWrapper"
 import { BiCheckCircle, BiErrorCircle, BiLoaderCircle } from "react-icons/bi"
 import { mak } from "@mak-stack/mak-ui"
 import React, { useEffect, useState } from "react"

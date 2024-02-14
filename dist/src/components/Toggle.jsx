@@ -9,7 +9,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import ComponentWrapper from "../functions/componentWrapper";
+import { ComponentWrapper } from "./ComponentWrapper";
 import { mak, ensureUtilityClass, } from "@mak-stack/mak-ui";
 import React from "react";
 const ToggleComponent = (_a) => {
