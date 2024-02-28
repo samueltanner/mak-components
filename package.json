@@ -1,6 +1,6 @@
 {
   "name": "@mak-stack/mak-components",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "MakComponents: A collection of React components optimized for use with the MakStack.",
   "main": "index.ts",
   "module": "dist/bundle.esm.js",
@@ -23,7 +23,7 @@
     "nextjs",
     "mak-stack"
   ],
-  "author": "Sam 'Makali'i' Tanner <samuel.m.s.tanner@gmail.com> (https://www.samuel-tanner.com/)",
+  "author": "Sam 'Mak' Tanner <sam@samuel-tanner.com> (https://www.samuel-tanner.com/)",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -38,7 +38,7 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@mak-stack/mak-ui": "^0.1.4",
+    "@mak-stack/mak-ui": "^0.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.1",
